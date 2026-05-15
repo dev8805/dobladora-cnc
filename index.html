@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Especificaciones: Dobladora de Estribos CNC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .strict-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        .video-placeholder {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px dashed #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header Section -->
+    <header class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 shadow-lg">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-center space-x-4 mb-4">
+                <div class="bg-blue-600 p-3 rounded-lg">
+                    <i class="fa-solid fa-industry text-2xl"></i>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Hoja de Especificaciones Técnicas</h1>
+            </div>
+            <h2 class="text-xl md:text-2xl font-light text-slate-300 border-l-4 border-blue-500 pl-4 mb-6">
+                Máquina Dobladora de Estribos CNC
+            </h2>
+            <div class="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700">
+                <h3 class="text-sm uppercase tracking-wider text-slate-400 font-semibold mb-2">
+                    <i class="fa-solid fa-bullseye mr-2"></i>Objetivo del Encargo
+                </h3>
+                <p class="text-slate-200 leading-relaxed">
+                    Búsqueda, evaluación de fábricas y negociación para la adquisición de una máquina dobladora de estribos
+                    que cumpla estrictamente con los parámetros técnicos descritos.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 space-y-8">
+
+        <!-- Budget Banner -->
+        <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl shadow-md p-6 text-white flex flex-col md:flex-row items-center justify-between transition-transform hover:scale-[1.01] duration-300">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <div class="bg-white/20 p-3 rounded-full">
+                    <i class="fa-solid fa-sack-dollar text-2xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-emerald-100 uppercase tracking-wider">Presupuesto Máximo Asignado</p>
+                    <p class="text-3xl font-bold">$8,000 USD</p>
+                </div>
+            </div>
+            <div class="bg-white/10 rounded-lg p-3 text-sm font-medium backdrop-blur-md">
+                <i class="fa-solid fa-circle-check mr-2"></i>Incluye: Máquina, accesorios, adaptación eléctrica y repuestos.
+            </div>
+        </div>
+
+        <!-- Two Column Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Card 1: Technical Specs -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div class="bg-blue-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
+                    <i class="fa-solid fa-gears text-blue-600 text-xl"></i>
+                    <h3 class="text-lg font-bold text-slate-800">1. Especificaciones Técnicas</h3>
+                </div>
+                <div class="p-6 space-y-4">
+
+                    <div class="mb-6 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <img
+                            src="assets/ImagenReferencia.png"
+                            alt="Máquina Dobladora CNC de Referencia"
+                            class="w-full object-contain max-h-[250px] rounded-lg shadow-sm bg-white mx-auto"
+                        >
+                        <p class="text-xs text-slate-500 mt-2 text-center italic">
+                            <i class="fa-solid fa-circle-info mr-1"></i>Imagen de referencia visual: No es obligatorio que el equipo a cotizar posea exactamente este mismo diseño.
+                        </p>
+                    </div>
+
+                    <p class="text-sm text-slate-500 mb-4">El agente debe buscar equipos que cumplan o superen las siguientes capacidades:</p>
+
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold text-slate-700">Tipo de Equipo:</span>
+                                <span class="text-slate-600"> Máquina de plegado de estribos CNC automática (sistema hidráulico o servomotor).</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold text-slate-700">Capacidad (Un hilo):</span>
+                                <span class="text-slate-600"> Procesamiento de diámetros entre 4 mm y 12 mm.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold text-slate-700">Capacidad (Doble hilo):</span>
+                                <span class="text-slate-600"> Procesamiento de diámetros entre 4 mm y 10 mm.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <span class="font-semibold text-slate-700">Materiales:</span>
+                                <span class="text-slate-600"> Acero al carbono, acero inoxidable, acero redondo liso y acero corrugado.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Strict Requirements -->
+                    <div class="mt-6 space-y-3">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg strict-badge">REQUISITO ESTRICTO</div>
+                            <h4 class="font-bold text-red-700 mb-1"><i class="fa-solid fa-plug-circle-bolt mr-2"></i>Ajuste Eléctrico</h4>
+                            <p class="text-sm text-slate-700">La máquina DEBE venir configurada de fábrica para operar a <strong>220V</strong>. Asegurar que motores y electrónica estén adaptados antes del envío.</p>
+                        </div>
+
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg strict-badge">REQUISITO ESTRICTO</div>
+                            <h4 class="font-bold text-red-700 mb-1"><i class="fa-solid fa-language mr-2"></i>Sistema de Control CNC</h4>
+                            <p class="text-sm text-slate-700">La interfaz del panel de control y el software de configuración DEBEN estar disponibles en idioma <strong>Español</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Card 2: Accessories -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                    <div class="bg-amber-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
+                        <i class="fa-solid fa-boxes-stacked text-amber-600 text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-800">2. Accesorios Obligatorios</h3>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 mb-2">
+                                <i class="fa-solid fa-ring text-amber-500 mr-2"></i>Estante Porta-Rollos (Pay-off / Wire Stand):
+                            </h4>
+                            <p class="text-slate-600 text-sm">Es de carácter <strong>obligatorio</strong> que la máquina se suministre con el estante/dispensador para los rollos de alambre. No se aceptarán cotizaciones que no lo incluyan en el paquete.</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100">
+                            <h4 class="font-semibold text-slate-800 mb-2">
+                                <i class="fa-solid fa-arrows-spin text-amber-500 mr-2"></i>Estante de Recepción Giratorio:
+                            </h4>
+                            <p class="text-slate-600 text-sm mb-3">El estante de recepción de material (donde caen los estribos terminados) y la máquina dobladora de barras de acero deben estar <strong>interrelacionados y poder girar</strong>.</p>
+
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                <img
+                                    src="assets/maquinaConEstante.png"
+                                    alt="Estante de recepción giratorio"
+                                    class="w-full object-contain max-h-[220px] rounded-lg shadow-sm bg-white mx-auto"
+                                >
+                                <p class="text-xs text-slate-500 mt-2 text-center italic">
+                                    <i class="fa-solid fa-eye mr-1"></i>Énfasis visual: Estante de recepción receptor interrelacionado.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100">
+                            <h4 class="font-semibold text-slate-800 mb-2">
+                                <i class="fa-solid fa-video text-amber-500 mr-2"></i>Video: Estante Funcionando:
+                            </h4>
+                            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+                                <video controls class="w-full max-h-[300px] bg-black">
+                                    <source src="assets/videoEstanteFuncionando.mp4" type="video/mp4">
+                                    Tu navegador no soporta video HTML5.
+                                </video>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 3: Warranty & Spares -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                    <div class="bg-purple-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
+                        <i class="fa-solid fa-screwdriver-wrench text-purple-600 text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-800">3. Repuestos y Garantía</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 p-2 rounded-lg text-purple-600 mt-1">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Kit de Repuestos</h4>
+                                <p class="text-sm text-slate-600">El fabricante debe detallar por escrito un listado claro de los repuestos (spare parts) incluidos con la compra.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-purple-100 p-2 rounded-lg text-purple-600 mt-1">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800">Acuerdo de Repuestos</h4>
+                                <p class="text-sm text-slate-600">Se debe negociar que el fabricante provea repuestos sin costo adicional por un período mínimo de <strong>un (1) año</strong> tras la compra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Inspection Instructions -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mt-8 hover:shadow-md transition-shadow duration-300">
+            <div class="bg-slate-800 text-white px-6 py-4 flex items-center space-x-3">
+                <i class="fa-solid fa-magnifying-glass-chart text-blue-400 text-xl"></i>
+                <h3 class="text-lg font-bold">4. Instrucciones de Inspección para el Agente</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div class="flex space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Auditoría de Fábrica</h4>
+                            <p class="text-sm text-slate-600 mt-1">Priorizar fabricantes reales sobre intermediarios o "trading companies".</p>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Verificación de Funcionamiento</h4>
+                            <p class="text-sm text-slate-600 mt-1">Solicitar pruebas o videos de la máquina operando con acero corrugado a las máximas capacidades requeridas.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Verificación de Idioma y Voltaje</h4>
+                            <p class="text-sm text-slate-600 mt-1">Confirmar presencialmente o por video que el panel está en <strong>español</strong> y la placa del motor indica <strong>220V</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">4</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Empaque</h4>
+                            <p class="text-sm text-slate-600 mt-1">Exigir caja de madera certificada para exportación (Transport Package) que garantice la integridad.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Additional Media Gallery (Optional) -->
+        <!--
+            GALERÍA ADICIONAL: Descomenta este bloque si quieres agregar más imágenes o videos.
+            Duplica los bloques <div class="media-item"> según necesites.
+        -->
+        <!--
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+            <div class="bg-indigo-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
+                <i class="fa-solid fa-photo-film text-indigo-600 text-xl"></i>
+                <h3 class="text-lg font-bold text-slate-800">5. Galería de Referencia Adicional</h3>
+            </div>
+            <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="media-item rounded-xl overflow-hidden border border-slate-200">
+                    <img src="assets/foto-adicional-1.jpg" alt="Referencia adicional 1" class="w-full object-cover max-h-[200px]">
+                    <p class="text-xs text-slate-500 p-2 text-center">Descripción de la imagen</p>
+                </div>
+
+                <div class="media-item rounded-xl overflow-hidden border border-slate-200">
+                    <video controls class="w-full max-h-[200px] bg-black">
+                        <source src="assets/video-adicional.mp4" type="video/mp4">
+                    </video>
+                    <p class="text-xs text-slate-500 p-2 text-center">Descripción del video</p>
+                </div>
+
+            </div>
+        </div>
+        -->
+
+    </main>
+
+    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-8">
+        <p>Documento de Especificaciones Técnicas y Requisitos de Adquisición</p>
+        <p class="text-xs text-slate-400 mt-1">Máquina Dobladora de Estribos CNC &mdash; 2026</p>
+    </footer>
+
+</body>
+</html>
