@@ -8,445 +8,446 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .strict-badge {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
-            70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+        body { font-family: 'Inter', sans-serif; }
+
+        @keyframes badgePulse {
+            0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45); }
+            70%  { box-shadow: 0 0 0 7px rgba(239, 68, 68, 0); }
             100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
-        .video-placeholder {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 2px dashed #475569;
-        }
+        .strict-badge { animation: badgePulse 2s infinite; }
+
+        /* Línea izquierda de acento en las tarjetas de pregunta */
+        .question-row { border-left: 3px solid transparent; transition: border-color .2s, background .2s; }
+        .question-row:hover { border-left-color: #2563eb; background-color: #eff6ff; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-100 text-slate-800">
 
-    <!-- Header Section -->
-    <header class="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 shadow-lg">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex items-center space-x-4 mb-4">
-                <div class="bg-blue-600 p-3 rounded-lg">
-                    <i class="fa-solid fa-industry text-2xl"></i>
-                </div>
-                <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Hoja de Especificaciones Técnicas</h1>
+<!-- ═══════════════════════════════════════════════ HEADER ══ -->
+<header class="bg-slate-900 text-white shadow-xl">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex items-center gap-4 mb-3">
+            <div class="bg-blue-600 p-3 rounded-xl shrink-0">
+                <i class="fa-solid fa-industry text-2xl"></i>
             </div>
-            <h2 class="text-xl md:text-2xl font-light text-slate-300 border-l-4 border-blue-500 pl-4 mb-6">
-                Máquina Dobladora de Estribos CNC
-            </h2>
-            <div class="bg-slate-800/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700">
-                <h3 class="text-sm uppercase tracking-wider text-slate-400 font-semibold mb-2">
-                    <i class="fa-solid fa-bullseye mr-2"></i>Objetivo del Encargo
-                </h3>
-                <p class="text-slate-200 leading-relaxed">
-                    Búsqueda, evaluación de fábricas y negociación para la adquisición de una máquina dobladora de estribos
-                    que cumpla estrictamente con los parámetros técnicos descritos.
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-1">Documento Técnico de Adquisición</p>
+                <h1 class="text-2xl sm:text-3xl font-bold leading-tight">Hoja de Especificaciones Técnicas</h1>
+            </div>
+        </div>
+        <h2 class="text-lg sm:text-xl font-light text-slate-300 border-l-4 border-blue-500 pl-4 ml-1 mb-7">
+            Máquina Dobladora de Estribos CNC
+        </h2>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">
+                <i class="fa-solid fa-bullseye mr-2 text-blue-400"></i>Objetivo del Encargo
+            </p>
+            <p class="text-slate-200 text-sm leading-relaxed">
+                Búsqueda, evaluación de fábricas y negociación para la adquisición de una máquina dobladora de estribos
+                que cumpla estrictamente con los parámetros técnicos descritos en este documento.
+            </p>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════ MAIN ══ -->
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+
+    <!-- PRESUPUESTO ─────────────────────────────────────── -->
+    <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl shadow-md p-5 sm:p-6 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <div class="bg-white/15 p-3 rounded-xl">
+                <i class="fa-solid fa-sack-dollar text-2xl"></i>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-blue-200">Presupuesto Máximo Asignado</p>
+                <p class="text-3xl font-bold mt-0.5">$8,000 USD</p>
+            </div>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-medium">
+            <i class="fa-solid fa-circle-check mr-2 text-blue-300"></i>Incluye: Máquina, accesorios, adaptación eléctrica y repuestos.
+        </div>
+    </div>
+
+    <!-- LEYENDA DE BADGES ───────────────────────────────── -->
+    <div class="flex flex-wrap gap-3 text-xs">
+        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-2 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
+            <span class="text-slate-600 font-medium">Especificación técnica</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-2 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
+            <span class="text-slate-600 font-medium">Requisito estricto</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-2 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+            <span class="text-slate-600 font-medium">Preguntar al proveedor</span>
+        </div>
+    </div>
+
+    <!-- ── SECCIÓN 1: ESPECIFICACIONES TÉCNICAS ─────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <!-- encabezado -->
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">1</div>
+            <div class="flex items-center gap-2 min-w-0">
+                <i class="fa-solid fa-gears text-blue-600"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg truncate">Especificaciones Técnicas</h3>
+            </div>
+        </div>
+        <!-- cuerpo -->
+        <div class="p-5 sm:p-6 space-y-6">
+
+            <!-- imagen -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+                <img src="assets/ImagenReferencia.png" alt="Máquina Dobladora CNC de Referencia"
+                     class="w-full object-contain max-h-64 rounded-lg bg-white mx-auto shadow-sm">
+                <p class="text-xs text-slate-400 mt-2 text-center italic">
+                    <i class="fa-solid fa-circle-info mr-1"></i>Imagen de referencia visual — el equipo a cotizar no debe ser idéntico a este diseño.
                 </p>
             </div>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 space-y-8">
+            <!-- capacidades -->
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Capacidades mínimas requeridas</p>
+                <ul class="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden">
+                    <li class="flex items-start gap-3 px-4 py-3 bg-white">
+                        <i class="fa-solid fa-check text-blue-500 mt-0.5 shrink-0"></i>
+                        <div class="text-sm"><span class="font-semibold text-slate-700">Tipo de equipo:</span><span class="text-slate-600"> CNC automática, sistema hidráulico o servomotor.</span></div>
+                    </li>
+                    <li class="flex items-start gap-3 px-4 py-3 bg-slate-50">
+                        <i class="fa-solid fa-check text-blue-500 mt-0.5 shrink-0"></i>
+                        <div class="text-sm"><span class="font-semibold text-slate-700">Capacidad (un hilo):</span><span class="text-slate-600"> Diámetros de 4 mm a 12 mm.</span></div>
+                    </li>
+                    <li class="flex items-start gap-3 px-4 py-3 bg-white">
+                        <i class="fa-solid fa-check text-blue-500 mt-0.5 shrink-0"></i>
+                        <div class="text-sm"><span class="font-semibold text-slate-700">Capacidad (doble hilo):</span><span class="text-slate-600"> Diámetros de 4 mm a 10 mm.</span></div>
+                    </li>
+                    <li class="flex items-start gap-3 px-4 py-3 bg-slate-50">
+                        <i class="fa-solid fa-check text-blue-500 mt-0.5 shrink-0"></i>
+                        <div class="text-sm"><span class="font-semibold text-slate-700">Materiales:</span><span class="text-slate-600"> Acero al carbono, inoxidable, liso y corrugado.</span></div>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- Budget Banner -->
-        <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl shadow-md p-6 text-white flex flex-col md:flex-row items-center justify-between transition-transform hover:scale-[1.01] duration-300">
-            <div class="flex items-center space-x-4 mb-4 md:mb-0">
-                <div class="bg-white/20 p-3 rounded-full">
-                    <i class="fa-solid fa-sack-dollar text-2xl"></i>
-                </div>
-                <div>
-                    <p class="text-sm font-medium text-emerald-100 uppercase tracking-wider">Presupuesto Máximo Asignado</p>
-                    <p class="text-3xl font-bold">$8,000 USD</p>
+            <!-- requisitos estrictos -->
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Requisitos estrictos</p>
+                <div class="space-y-3">
+                    <div class="relative bg-red-50 border border-red-200 rounded-xl p-4 pr-28 sm:pr-36 overflow-hidden">
+                        <span class="strict-badge absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-xl">REQUISITO ESTRICTO</span>
+                        <p class="font-semibold text-red-800 text-sm mb-1"><i class="fa-solid fa-plug-circle-bolt mr-2"></i>Voltaje</p>
+                        <p class="text-sm text-slate-700">La máquina DEBE venir configurada de fábrica a <strong>220V</strong>. Motores y electrónica adaptados antes del envío.</p>
+                    </div>
+                    <div class="relative bg-red-50 border border-red-200 rounded-xl p-4 pr-28 sm:pr-36 overflow-hidden">
+                        <span class="strict-badge absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-xl">REQUISITO ESTRICTO</span>
+                        <p class="font-semibold text-red-800 text-sm mb-1"><i class="fa-solid fa-language mr-2"></i>Idioma del panel CNC</p>
+                        <p class="text-sm text-slate-700">La interfaz y el software de configuración DEBEN estar disponibles en <strong>Español</strong>.</p>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white/10 rounded-lg p-3 text-sm font-medium backdrop-blur-md">
-                <i class="fa-solid fa-circle-check mr-2"></i>Incluye: Máquina, accesorios, adaptación eléctrica y repuestos.
+        </div>
+    </div>
+
+    <!-- ── SECCIÓN 2: ACCESORIOS OBLIGATORIOS ───────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">2</div>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-boxes-stacked text-blue-600"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg">Accesorios Obligatorios</h3>
             </div>
         </div>
+        <div class="p-5 sm:p-6 space-y-6">
 
-        <!-- Two Column Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-            <!-- Card 1: Technical Specs -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <div class="bg-blue-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
-                    <i class="fa-solid fa-gears text-blue-600 text-xl"></i>
-                    <h3 class="text-lg font-bold text-slate-800">1. Especificaciones Técnicas</h3>
+            <!-- estante porta-rollos -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <div class="bg-slate-50 px-4 py-3 flex items-center gap-2 border-b border-slate-200">
+                    <i class="fa-solid fa-ring text-blue-600 text-sm"></i>
+                    <span class="font-semibold text-slate-800 text-sm">Estante Porta-Rollos (Pay-off / Wire Stand)</span>
+                    <span class="ml-auto shrink-0 text-xs font-bold bg-red-100 text-red-700 border border-red-200 px-2 py-0.5 rounded-full">OBLIGATORIO</span>
                 </div>
-                <div class="p-6 space-y-4">
+                <div class="p-4">
+                    <p class="text-sm text-slate-600">Debe suministrarse con el estante/dispensador para los rollos de alambre. <strong>No se aceptarán cotizaciones que no lo incluyan.</strong></p>
+                </div>
+            </div>
 
-                    <div class="mb-6 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                        <img
-                            src="assets/ImagenReferencia.png"
-                            alt="Máquina Dobladora CNC de Referencia"
-                            class="w-full object-contain max-h-[250px] rounded-lg shadow-sm bg-white mx-auto"
-                        >
-                        <p class="text-xs text-slate-500 mt-2 text-center italic">
-                            <i class="fa-solid fa-circle-info mr-1"></i>Imagen de referencia visual: No es obligatorio que el equipo a cotizar posea exactamente este mismo diseño.
+            <!-- estante giratorio -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <div class="bg-slate-50 px-4 py-3 flex items-center gap-2 border-b border-slate-200">
+                    <i class="fa-solid fa-arrows-spin text-blue-600 text-sm"></i>
+                    <span class="font-semibold text-slate-800 text-sm">Estante de Recepción Giratorio</span>
+                    <span class="ml-auto shrink-0 text-xs font-bold bg-red-100 text-red-700 border border-red-200 px-2 py-0.5 rounded-full">OBLIGATORIO</span>
+                </div>
+                <div class="p-4 space-y-4">
+                    <p class="text-sm text-slate-600">El estante de recepción (donde caen los estribos terminados) y la máquina deben estar <strong>interrelacionados y poder girar</strong>.</p>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+                        <img src="assets/maquinaConEstante.png" alt="Estante de recepción giratorio"
+                             class="w-full object-contain max-h-56 rounded-lg bg-white mx-auto shadow-sm">
+                        <p class="text-xs text-slate-400 mt-2 text-center italic">
+                            <i class="fa-solid fa-eye mr-1"></i>Referencia: estante receptor interrelacionado con la máquina.
                         </p>
                     </div>
-
-                    <p class="text-sm text-slate-500 mb-4">El agente debe buscar equipos que cumplan o superen las siguientes capacidades:</p>
-
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <span class="font-semibold text-slate-700">Tipo de Equipo:</span>
-                                <span class="text-slate-600"> Máquina de plegado de estribos CNC automática (sistema hidráulico o servomotor).</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <span class="font-semibold text-slate-700">Capacidad (Un hilo):</span>
-                                <span class="text-slate-600"> Procesamiento de diámetros entre 4 mm y 12 mm.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <span class="font-semibold text-slate-700">Capacidad (Doble hilo):</span>
-                                <span class="text-slate-600"> Procesamiento de diámetros entre 4 mm y 10 mm.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <span class="font-semibold text-slate-700">Materiales:</span>
-                                <span class="text-slate-600"> Acero al carbono, acero inoxidable, acero redondo liso y acero corrugado.</span>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <!-- Strict Requirements -->
-                    <div class="mt-6 space-y-3">
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg strict-badge">REQUISITO ESTRICTO</div>
-                            <h4 class="font-bold text-red-700 mb-1"><i class="fa-solid fa-plug-circle-bolt mr-2"></i>Ajuste Eléctrico</h4>
-                            <p class="text-sm text-slate-700">La máquina DEBE venir configurada de fábrica para operar a <strong>220V</strong>. Asegurar que motores y electrónica estén adaptados antes del envío.</p>
-                        </div>
-
-                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-bl-lg strict-badge">REQUISITO ESTRICTO</div>
-                            <h4 class="font-bold text-red-700 mb-1"><i class="fa-solid fa-language mr-2"></i>Sistema de Control CNC</h4>
-                            <p class="text-sm text-slate-700">La interfaz del panel de control y el software de configuración DEBEN estar disponibles en idioma <strong>Español</strong>.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="space-y-8">
-                <!-- Card 2: Accessories -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                    <div class="bg-amber-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
-                        <i class="fa-solid fa-boxes-stacked text-amber-600 text-xl"></i>
-                        <h3 class="text-lg font-bold text-slate-800">2. Accesorios Obligatorios</h3>
-                    </div>
-                    <div class="p-6 space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-slate-800 mb-2">
-                                <i class="fa-solid fa-ring text-amber-500 mr-2"></i>Estante Porta-Rollos (Pay-off / Wire Stand):
-                            </h4>
-                            <p class="text-slate-600 text-sm">Es de carácter <strong>obligatorio</strong> que la máquina se suministre con el estante/dispensador para los rollos de alambre. No se aceptarán cotizaciones que no lo incluyan en el paquete.</p>
-                        </div>
+            <!-- video -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <div class="bg-slate-50 px-4 py-3 flex items-center gap-2 border-b border-slate-200">
+                    <i class="fa-solid fa-video text-blue-600 text-sm"></i>
+                    <span class="font-semibold text-slate-800 text-sm">Video: Estante en Funcionamiento</span>
+                </div>
+                <div class="p-4">
+                    <video controls class="w-full rounded-xl bg-black max-h-72 shadow-sm">
+                        <source src="assets/videoEstanteFuncionando.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+            </div>
 
-                        <div class="pt-4 border-t border-slate-100">
-                            <h4 class="font-semibold text-slate-800 mb-2">
-                                <i class="fa-solid fa-arrows-spin text-amber-500 mr-2"></i>Estante de Recepción Giratorio:
-                            </h4>
-                            <p class="text-slate-600 text-sm mb-3">El estante de recepción de material (donde caen los estribos terminados) y la máquina dobladora de barras de acero deben estar <strong>interrelacionados y poder girar</strong>.</p>
+        </div>
+    </div>
 
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
-                                <img
-                                    src="assets/maquinaConEstante.png"
-                                    alt="Estante de recepción giratorio"
-                                    class="w-full object-contain max-h-[220px] rounded-lg shadow-sm bg-white mx-auto"
-                                >
-                                <p class="text-xs text-slate-500 mt-2 text-center italic">
-                                    <i class="fa-solid fa-eye mr-1"></i>Énfasis visual: Estante de recepción receptor interrelacionado.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="pt-4 border-t border-slate-100">
-                            <h4 class="font-semibold text-slate-800 mb-2">
-                                <i class="fa-solid fa-video text-amber-500 mr-2"></i>Video: Estante Funcionando:
-                            </h4>
-                            <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm">
-                                <video controls class="w-full max-h-[300px] bg-black">
-                                    <source src="assets/videoEstanteFuncionando.mp4" type="video/mp4">
-                                    Tu navegador no soporta video HTML5.
-                                </video>
-                            </div>
-                        </div>
-
+    <!-- ── SECCIÓN 3: REPUESTOS Y GARANTÍA ──────────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">3</div>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-screwdriver-wrench text-blue-600"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg">Repuestos y Garantía</h3>
+            </div>
+        </div>
+        <div class="p-5 sm:p-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-slate-200 rounded-xl p-4 flex items-start gap-3">
+                    <div class="bg-blue-100 text-blue-700 p-2 rounded-lg shrink-0"><i class="fa-solid fa-list-check"></i></div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">Kit de Repuestos</p>
+                        <p class="text-sm text-slate-600 mt-1">El fabricante debe detallar por escrito el listado completo de repuestos (spare parts) incluidos con la compra.</p>
                     </div>
                 </div>
-
-                <!-- Card 3: Warranty & Spares -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                    <div class="bg-purple-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
-                        <i class="fa-solid fa-screwdriver-wrench text-purple-600 text-xl"></i>
-                        <h3 class="text-lg font-bold text-slate-800">3. Repuestos y Garantía</h3>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-purple-100 p-2 rounded-lg text-purple-600 mt-1">
-                                <i class="fa-solid fa-list-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-slate-800">Kit de Repuestos</h4>
-                                <p class="text-sm text-slate-600">El fabricante debe detallar por escrito un listado claro de los repuestos (spare parts) incluidos con la compra.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-purple-100 p-2 rounded-lg text-purple-600 mt-1">
-                                <i class="fa-solid fa-handshake"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-slate-800">Acuerdo de Repuestos</h4>
-                                <p class="text-sm text-slate-600">Se debe negociar que el fabricante provea repuestos sin costo adicional por un período mínimo de <strong>un (1) año</strong> tras la compra.</p>
-                            </div>
-                        </div>
+                <div class="border border-slate-200 rounded-xl p-4 flex items-start gap-3">
+                    <div class="bg-blue-100 text-blue-700 p-2 rounded-lg shrink-0"><i class="fa-solid fa-handshake"></i></div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">Acuerdo de Repuestos</p>
+                        <p class="text-sm text-slate-600 mt-1">Negociar provisión de repuestos sin costo adicional por un mínimo de <strong>un (1) año</strong> tras la compra.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Card 4: Inspection Instructions -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mt-8 hover:shadow-md transition-shadow duration-300">
-            <div class="bg-slate-800 text-white px-6 py-4 flex items-center space-x-3">
-                <i class="fa-solid fa-magnifying-glass-chart text-blue-400 text-xl"></i>
-                <h3 class="text-lg font-bold">4. Instrucciones de Inspección para el Agente</h3>
+    <!-- ── SECCIÓN 4: INSTRUCCIONES DE INSPECCIÓN ────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">4</div>
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass-chart text-blue-600"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg">Instrucciones de Inspección</h3>
             </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <div class="flex space-x-4">
-                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">1</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">Verificación de Funcionamiento</h4>
-                            <p class="text-sm text-slate-600 mt-1">Solicitar pruebas o videos de la máquina operando con acero corrugado a las máximas capacidades requeridas.</p>
-                        </div>
+        </div>
+        <div class="p-5 sm:p-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-slate-200 rounded-xl p-4 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-slate-100 border-2 border-slate-300 text-slate-700 font-bold text-sm flex items-center justify-center shrink-0">1</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">Verificación de Funcionamiento</p>
+                        <p class="text-sm text-slate-600 mt-1">Solicitar pruebas o videos de la máquina operando con acero corrugado a las máximas capacidades requeridas.</p>
                     </div>
-
-                    <div class="flex space-x-4">
-                        <div class="flex-shrink-0 w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-700 border-2 border-slate-200">2</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">Verificación de Idioma y Voltaje</h4>
-                            <p class="text-sm text-slate-600 mt-1">Confirmar presencialmente o por video que el panel está en <strong>español</strong> y la placa del motor indica <strong>220V</strong>.</p>
-                        </div>
+                </div>
+                <div class="border border-slate-200 rounded-xl p-4 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-slate-100 border-2 border-slate-300 text-slate-700 font-bold text-sm flex items-center justify-center shrink-0">2</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">Verificación de Idioma y Voltaje</p>
+                        <p class="text-sm text-slate-600 mt-1">Confirmar por video que el panel está en <strong>español</strong> y la placa del motor indica <strong>220V</strong>.</p>
                     </div>
-
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Card 5: Velocidad y Resistencia -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-            <div class="bg-orange-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <i class="fa-solid fa-gauge-high text-orange-600 text-xl"></i>
-                    <h3 class="text-lg font-bold text-slate-800">5. Velocidad de Producción y Resistencia Operativa</h3>
-                </div>
-                <span class="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Preguntar al Proveedor</span>
+    <!-- ── SECCIÓN 5: VELOCIDAD Y RESISTENCIA ────────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">5</div>
+            <div class="flex items-center gap-2 min-w-0 flex-1">
+                <i class="fa-solid fa-gauge-high text-blue-600 shrink-0"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg truncate">Velocidad de Producción y Resistencia Operativa</h3>
             </div>
-            <div class="p-6 space-y-4">
-
-                <div class="flex items-start gap-3 bg-orange-50 border border-orange-200 rounded-xl p-4">
-                    <i class="fa-solid fa-circle-question text-orange-500 text-lg mt-0.5 shrink-0"></i>
-                    <p class="text-sm text-slate-700">El proveedor debe responder cada punto por escrito. Estos datos son determinantes para evaluar si la máquina soporta las jornadas de trabajo reales sin comprometer la calidad ni la vida útil del equipo.</p>
-                </div>
-
-                <!-- Bloque velocidad -->
-                <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-                    <div class="bg-orange-100 px-4 py-2 flex items-center gap-2">
-                        <i class="fa-solid fa-bolt text-orange-600"></i>
-                        <span class="text-sm font-bold text-orange-800 uppercase tracking-wide">Velocidad de Producción</span>
-                    </div>
-                    <div class="p-4 space-y-3">
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿Cuántos estribos por hora puede producir la máquina en condiciones normales de operación?</p>
-                                <p class="text-xs text-slate-500 mt-1">Pedir el dato para un estribo estándar (ej. cuadrado de 20×20 cm, varilla de 8 mm) como referencia base.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿La velocidad de producción varía según el diámetro del alambre o la complejidad de la forma?</p>
-                                <p class="text-xs text-slate-500 mt-1">Solicitar tabla o rango de velocidad para diámetros de 4 mm, 8 mm y 12 mm.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿Cuál es la velocidad máxima de alimentación del alambre (metros por minuto)?</p>
-                                <p class="text-xs text-slate-500 mt-1">Este dato permite estimar el rendimiento real independientemente del tipo de estribo.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Bloque resistencia -->
-                <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-                    <div class="bg-red-100 px-4 py-2 flex items-center gap-2">
-                        <i class="fa-solid fa-temperature-half text-red-600"></i>
-                        <span class="text-sm font-bold text-red-800 uppercase tracking-wide">Resistencia y Jornada de Trabajo</span>
-                    </div>
-                    <div class="p-4 space-y-3">
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿Cuántas horas continuas puede operar la máquina sin necesitar pausas por temperatura o desgaste?</p>
-                                <p class="text-xs text-slate-500 mt-1">Determinar si soporta jornadas de 8, 10 o 12 horas continuas sin degradar el rendimiento.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">5</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿La máquina tiene sistema de protección contra sobrecalentamiento? ¿Cómo actúa?</p>
-                                <p class="text-xs text-slate-500 mt-1">Verificar si detiene la operación automáticamente, emite alerta o simplemente no tiene protección térmica.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
-                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">6</div>
-                            <div>
-                                <p class="font-semibold text-slate-800">¿Qué mantenimiento requiere la máquina durante o entre jornadas para garantizar su funcionamiento óptimo?</p>
-                                <p class="text-xs text-slate-500 mt-1">Lubricación, revisión de pines, limpieza de viruta, etc. Solicitar el manual de mantenimiento preventivo.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 flex items-start gap-3">
-                    <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg shrink-0 mt-0.5"></i>
-                    <p class="text-sm text-amber-900"><strong>Importante:</strong> Desconfiar de proveedores que no puedan dar cifras concretas de velocidad. Solicitar siempre el dato en estribos/hora con una referencia de forma y diámetro específicos, no en términos generales.</p>
-                </div>
-
-            </div>
+            <span class="shrink-0 text-xs font-bold bg-amber-100 text-amber-700 border border-amber-300 px-2 py-1 rounded-full hidden sm:inline">Preguntar al Proveedor</span>
         </div>
+        <div class="p-5 sm:p-6 space-y-5">
 
-        <!-- Card 6: Formas - Preguntas al Proveedor -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-            <div class="bg-cyan-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <i class="fa-solid fa-shapes text-cyan-600 text-xl"></i>
-                    <h3 class="text-lg font-bold text-slate-800">6. Capacidad de Formas y Figuras</h3>
-                </div>
-                <span class="bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Preguntar al Proveedor</span>
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-circle-question text-blue-500 shrink-0 mt-0.5"></i>
+                <p class="text-sm text-slate-700">El proveedor debe responder cada punto <strong>por escrito</strong>. Estos datos son determinantes para evaluar si la máquina soporta las jornadas de trabajo reales.</p>
             </div>
-            <div class="p-6 space-y-6">
 
-                <div class="flex items-start gap-3 bg-cyan-50 border border-cyan-200 rounded-xl p-4">
-                    <i class="fa-solid fa-circle-question text-cyan-500 text-lg mt-0.5 shrink-0"></i>
-                    <p class="text-sm text-slate-700">Las siguientes preguntas deben ser planteadas al proveedor durante la cotización. Se recomienda solicitar respuestas por escrito y, cuando sea posible, con demostración en video.</p>
+            <!-- sub-bloque velocidad -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-amber-500 text-sm"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600">Velocidad de Producción</span>
                 </div>
-
-                <!-- Imagen de referencia de formas -->
-                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
-                    <img
-                        src="assets/Formas.png"
-                        alt="Formas de referencia para consultar al proveedor"
-                        class="w-full object-contain max-h-[350px] rounded-lg shadow-sm bg-white mx-auto"
-                    >
-                    <p class="text-xs text-slate-500 mt-2 text-center italic">
-                        <i class="fa-solid fa-circle-info mr-1"></i>Imagen de referencia para mostrar al proveedor y consultar cuáles de estas formas puede producir la máquina.
-                    </p>
+                <div class="divide-y divide-slate-100">
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿Cuántos estribos por hora puede producir la máquina en condiciones normales?</p>
+                            <p class="text-xs text-slate-500 mt-1">Pedir el dato para un estribo estándar (ej. cuadrado 20×20 cm, varilla 8 mm) como referencia base.</p>
+                        </div>
+                    </div>
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿La velocidad varía según el diámetro del alambre o la complejidad de la forma?</p>
+                            <p class="text-xs text-slate-500 mt-1">Solicitar tabla o rango de velocidad para 4 mm, 8 mm y 12 mm.</p>
+                        </div>
+                    </div>
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿Cuál es la velocidad máxima de alimentación del alambre (metros/minuto)?</p>
+                            <p class="text-xs text-slate-500 mt-1">Este dato permite estimar el rendimiento real independientemente del tipo de estribo.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Preguntas -->
-                <div class="space-y-3">
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Cuántas formas o figuras distintas puede producir la máquina en total?</p>
-                            <p class="text-xs text-slate-500 mt-1">Solicitar el número exacto o el catálogo completo de formas disponibles.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Las formas vienen predeterminadas de fábrica o el operario puede programar formas nuevas?</p>
-                            <p class="text-xs text-slate-500 mt-1">Determinar si el sistema es cerrado (solo formas fijas) o abierto (permite programación personalizada desde el panel).</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">Si se pueden crear formas personalizadas, ¿cómo se programa una forma nueva desde el panel CNC?</p>
-                            <p class="text-xs text-slate-500 mt-1">Pedir una demostración o video del proceso de programación paso a paso.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Puede la máquina producir todas las formas que aparecen en la imagen de referencia?</p>
-                            <p class="text-xs text-slate-500 mt-1">Mostrar la imagen al proveedor y pedir confirmación forma por forma. Si alguna no es posible, que lo indique por escrito.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">5</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Qué formas o configuraciones NO puede realizar esta máquina?</p>
-                            <p class="text-xs text-slate-500 mt-1">Exigir una lista clara de las limitaciones. Desconfiar de proveedores que afirmen que "puede hacer todo".</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">6</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Cuál es el ángulo mínimo y máximo de doblez que admite la máquina?</p>
-                            <p class="text-xs text-slate-500 mt-1">Verificar el rango de ángulos por doblez y si aplica igual para todos los diámetros de alambre.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
-                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">7</div>
-                        <div>
-                            <p class="font-semibold text-slate-800">¿Cuántas formas pueden almacenarse en la memoria del controlador CNC?</p>
-                            <p class="text-xs text-slate-500 mt-1">Conocer la capacidad de almacenamiento del sistema para planificar la operación con múltiples referencias.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Nota de alerta -->
-                <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 flex items-start gap-3">
-                    <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg shrink-0 mt-0.5"></i>
-                    <p class="text-sm text-amber-900"><strong>Importante:</strong> Solicitar al proveedor un video de la máquina produciendo al menos 3 formas distintas con acero corrugado antes de cerrar cualquier negociación.</p>
-                </div>
-
             </div>
+
+            <!-- sub-bloque resistencia -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden">
+                <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-temperature-half text-amber-500 text-sm"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600">Resistencia y Jornada de Trabajo</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿Cuántas horas continuas puede operar sin pausas por temperatura o desgaste?</p>
+                            <p class="text-xs text-slate-500 mt-1">Determinar si soporta jornadas de 8, 10 o 12 horas sin degradar el rendimiento.</p>
+                        </div>
+                    </div>
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿La máquina tiene protección contra sobrecalentamiento? ¿Cómo actúa?</p>
+                            <p class="text-xs text-slate-500 mt-1">Verificar si detiene automáticamente, emite alerta o no tiene protección térmica.</p>
+                        </div>
+                    </div>
+                    <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                        <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</div>
+                        <div>
+                            <p class="font-semibold text-slate-800 text-sm">¿Qué mantenimiento requiere durante o entre jornadas para garantizar el funcionamiento óptimo?</p>
+                            <p class="text-xs text-slate-500 mt-1">Lubricación, revisión de pines, limpieza, etc. Solicitar el manual de mantenimiento preventivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-amber-500 shrink-0 mt-0.5"></i>
+                <p class="text-sm text-amber-900"><strong>Importante:</strong> Desconfiar de proveedores que no puedan dar cifras concretas. Solicitar siempre el dato en estribos/hora con forma y diámetro específicos como referencia.</p>
+            </div>
+
         </div>
+    </div>
 
-    </main>
+    <!-- ── SECCIÓN 6: FORMAS Y FIGURAS ───────────────────── -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-4 px-6 py-4 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shrink-0">6</div>
+            <div class="flex items-center gap-2 min-w-0 flex-1">
+                <i class="fa-solid fa-shapes text-blue-600 shrink-0"></i>
+                <h3 class="font-bold text-slate-800 text-base sm:text-lg truncate">Capacidad de Formas y Figuras</h3>
+            </div>
+            <span class="shrink-0 text-xs font-bold bg-amber-100 text-amber-700 border border-amber-300 px-2 py-1 rounded-full hidden sm:inline">Preguntar al Proveedor</span>
+        </div>
+        <div class="p-5 sm:p-6 space-y-5">
 
-    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-8">
-        <p>Documento de Especificaciones Técnicas y Requisitos de Adquisición</p>
-        <p class="text-xs text-slate-400 mt-1">Máquina Dobladora de Estribos CNC &mdash; 2026</p>
-    </footer>
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-circle-question text-blue-500 shrink-0 mt-0.5"></i>
+                <p class="text-sm text-slate-700">Preguntas para plantear al proveedor durante la cotización. Se recomienda solicitar respuestas <strong>por escrito</strong> y, cuando sea posible, con demostración en video.</p>
+            </div>
+
+            <!-- imagen -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+                <img src="assets/Formas.png" alt="Formas de referencia"
+                     class="w-full object-contain max-h-80 rounded-lg bg-white mx-auto shadow-sm">
+                <p class="text-xs text-slate-400 mt-2 text-center italic">
+                    <i class="fa-solid fa-circle-info mr-1"></i>Mostrar esta imagen al proveedor y consultar cuáles puede producir la máquina.
+                </p>
+            </div>
+
+            <!-- preguntas -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-100">
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Cuántas formas o figuras distintas puede producir la máquina en total?</p>
+                        <p class="text-xs text-slate-500 mt-1">Solicitar el número exacto o el catálogo completo de formas disponibles.</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Las formas vienen predeterminadas de fábrica o el operario puede programar formas nuevas?</p>
+                        <p class="text-xs text-slate-500 mt-1">Determinar si el sistema es cerrado (formas fijas) o abierto (programación personalizada desde el panel).</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">Si se pueden crear formas personalizadas, ¿cómo se programa una forma nueva desde el panel CNC?</p>
+                        <p class="text-xs text-slate-500 mt-1">Pedir demostración o video del proceso de programación paso a paso.</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Puede la máquina producir todas las formas de la imagen de referencia?</p>
+                        <p class="text-xs text-slate-500 mt-1">Pedir confirmación forma por forma. Si alguna no es posible, que lo indique por escrito.</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Qué formas o configuraciones NO puede realizar esta máquina?</p>
+                        <p class="text-xs text-slate-500 mt-1">Exigir lista clara de limitaciones. Desconfiar de proveedores que afirmen que "puede hacer todo".</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">6</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Cuál es el ángulo mínimo y máximo de doblez que admite la máquina?</p>
+                        <p class="text-xs text-slate-500 mt-1">Verificar rango de ángulos y si aplica igual para todos los diámetros de alambre.</p>
+                    </div>
+                </div>
+                <div class="question-row px-4 py-4 flex items-start gap-4 bg-white">
+                    <div class="w-7 h-7 rounded-full bg-slate-100 text-slate-600 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">7</div>
+                    <div>
+                        <p class="font-semibold text-slate-800 text-sm">¿Cuántas formas pueden almacenarse en la memoria del controlador CNC?</p>
+                        <p class="text-xs text-slate-500 mt-1">Conocer la capacidad de almacenamiento para planificar la operación con múltiples referencias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-amber-500 shrink-0 mt-0.5"></i>
+                <p class="text-sm text-amber-900"><strong>Importante:</strong> Solicitar un video de la máquina produciendo al menos 3 formas distintas con acero corrugado antes de cerrar cualquier negociación.</p>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════ FOOTER ══ -->
+<footer class="border-t border-slate-200 mt-4 py-8 text-center">
+    <p class="text-sm text-slate-500">Documento de Especificaciones Técnicas y Requisitos de Adquisición</p>
+    <p class="text-xs text-slate-400 mt-1">Máquina Dobladora de Estribos CNC &mdash; 2026</p>
+</footer>
 
 </body>
 </html>
