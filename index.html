@@ -249,12 +249,106 @@
             </div>
         </div>
 
-        <!-- Card 5: Formas - Preguntas al Proveedor -->
+        <!-- Card 5: Velocidad y Resistencia -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
+            <div class="bg-orange-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-gauge-high text-orange-600 text-xl"></i>
+                    <h3 class="text-lg font-bold text-slate-800">5. Velocidad de Producción y Resistencia Operativa</h3>
+                </div>
+                <span class="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Preguntar al Proveedor</span>
+            </div>
+            <div class="p-6 space-y-4">
+
+                <div class="flex items-start gap-3 bg-orange-50 border border-orange-200 rounded-xl p-4">
+                    <i class="fa-solid fa-circle-question text-orange-500 text-lg mt-0.5 shrink-0"></i>
+                    <p class="text-sm text-slate-700">El proveedor debe responder cada punto por escrito. Estos datos son determinantes para evaluar si la máquina soporta las jornadas de trabajo reales sin comprometer la calidad ni la vida útil del equipo.</p>
+                </div>
+
+                <!-- Bloque velocidad -->
+                <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                    <div class="bg-orange-100 px-4 py-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-orange-600"></i>
+                        <span class="text-sm font-bold text-orange-800 uppercase tracking-wide">Velocidad de Producción</span>
+                    </div>
+                    <div class="p-4 space-y-3">
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿Cuántos estribos por hora puede producir la máquina en condiciones normales de operación?</p>
+                                <p class="text-xs text-slate-500 mt-1">Pedir el dato para un estribo estándar (ej. cuadrado de 20×20 cm, varilla de 8 mm) como referencia base.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿La velocidad de producción varía según el diámetro del alambre o la complejidad de la forma?</p>
+                                <p class="text-xs text-slate-500 mt-1">Solicitar tabla o rango de velocidad para diámetros de 4 mm, 8 mm y 12 mm.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-orange-300 hover:bg-orange-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿Cuál es la velocidad máxima de alimentación del alambre (metros por minuto)?</p>
+                                <p class="text-xs text-slate-500 mt-1">Este dato permite estimar el rendimiento real independientemente del tipo de estribo.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bloque resistencia -->
+                <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+                    <div class="bg-red-100 px-4 py-2 flex items-center gap-2">
+                        <i class="fa-solid fa-temperature-half text-red-600"></i>
+                        <span class="text-sm font-bold text-red-800 uppercase tracking-wide">Resistencia y Jornada de Trabajo</span>
+                    </div>
+                    <div class="p-4 space-y-3">
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿Cuántas horas continuas puede operar la máquina sin necesitar pausas por temperatura o desgaste?</p>
+                                <p class="text-xs text-slate-500 mt-1">Determinar si soporta jornadas de 8, 10 o 12 horas continuas sin degradar el rendimiento.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿La máquina tiene sistema de protección contra sobrecalentamiento? ¿Cómo actúa?</p>
+                                <p class="text-xs text-slate-500 mt-1">Verificar si detiene la operación automáticamente, emite alerta o simplemente no tiene protección térmica.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/30 transition-colors duration-200">
+                            <div class="shrink-0 w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm">6</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">¿Qué mantenimiento requiere la máquina durante o entre jornadas para garantizar su funcionamiento óptimo?</p>
+                                <p class="text-xs text-slate-500 mt-1">Lubricación, revisión de pines, limpieza de viruta, etc. Solicitar el manual de mantenimiento preventivo.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 flex items-start gap-3">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg shrink-0 mt-0.5"></i>
+                    <p class="text-sm text-amber-900"><strong>Importante:</strong> Desconfiar de proveedores que no puedan dar cifras concretas de velocidad. Solicitar siempre el dato en estribos/hora con una referencia de forma y diámetro específicos, no en términos generales.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 6: Formas - Preguntas al Proveedor -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
             <div class="bg-cyan-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <i class="fa-solid fa-shapes text-cyan-600 text-xl"></i>
-                    <h3 class="text-lg font-bold text-slate-800">5. Capacidad de Formas y Figuras</h3>
+                    <h3 class="text-lg font-bold text-slate-800">6. Capacidad de Formas y Figuras</h3>
                 </div>
                 <span class="bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Preguntar al Proveedor</span>
             </div>
