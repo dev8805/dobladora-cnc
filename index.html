@@ -265,92 +265,99 @@
             </div>
         </div>
 
-        <!-- Card 5: Formas -->
+        <!-- Card 5: Formas - Preguntas al Proveedor -->
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow duration-300">
-            <div class="bg-cyan-50 border-b border-slate-200 px-6 py-4 flex items-center space-x-3">
-                <i class="fa-solid fa-shapes text-cyan-600 text-xl"></i>
-                <h3 class="text-lg font-bold text-slate-800">5. Formas que Puede Producir la Máquina</h3>
+            <div class="bg-cyan-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-shapes text-cyan-600 text-xl"></i>
+                    <h3 class="text-lg font-bold text-slate-800">5. Capacidad de Formas y Figuras</h3>
+                </div>
+                <span class="bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Preguntar al Proveedor</span>
             </div>
-            <div class="p-6 space-y-8">
+            <div class="p-6 space-y-6">
 
-                <!-- Imagen de formas -->
+                <div class="flex items-start gap-3 bg-cyan-50 border border-cyan-200 rounded-xl p-4">
+                    <i class="fa-solid fa-circle-question text-cyan-500 text-lg mt-0.5 shrink-0"></i>
+                    <p class="text-sm text-slate-700">Las siguientes preguntas deben ser planteadas al proveedor durante la cotización. Se recomienda solicitar respuestas por escrito y, cuando sea posible, con demostración en video.</p>
+                </div>
+
+                <!-- Imagen de referencia de formas -->
                 <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
                     <img
                         src="assets/Formas.png"
-                        alt="Catálogo de formas de estribos"
+                        alt="Formas de referencia para consultar al proveedor"
                         class="w-full object-contain max-h-[350px] rounded-lg shadow-sm bg-white mx-auto"
                     >
                     <p class="text-xs text-slate-500 mt-2 text-center italic">
-                        <i class="fa-solid fa-circle-info mr-1"></i>Catálogo de formas estándar disponibles en máquinas CNC de este tipo.
+                        <i class="fa-solid fa-circle-info mr-1"></i>Imagen de referencia para mostrar al proveedor y consultar cuáles de estas formas puede producir la máquina.
                     </p>
                 </div>
 
-                <!-- Cantidad y programables -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-4 text-center">
-                        <div class="text-3xl font-bold text-cyan-700 mb-1">+50</div>
-                        <p class="text-sm font-semibold text-slate-700">Formas predeterminadas</p>
-                        <p class="text-xs text-slate-500 mt-1">Vienen cargadas de fábrica en la memoria del controlador CNC.</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
-                        <div class="text-3xl font-bold text-emerald-700 mb-1">∞</div>
-                        <p class="text-sm font-semibold text-slate-700">Formas personalizadas</p>
-                        <p class="text-xs text-slate-500 mt-1">El operario puede programar nuevas formas directamente en el panel CNC.</p>
-                    </div>
-                    <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
-                        <div class="text-3xl font-bold text-red-600 mb-1">
-                            <i class="fa-solid fa-ban text-2xl"></i>
-                        </div>
-                        <p class="text-sm font-semibold text-slate-700">Formas no realizables</p>
-                        <p class="text-xs text-slate-500 mt-1">Curvas en espiral, espirales 3D o formas con radio menor al mínimo de doblado del material.</p>
-                    </div>
-                </div>
+                <!-- Preguntas -->
+                <div class="space-y-3">
 
-                <!-- Predeterminadas vs personalizadas -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <div class="space-y-3">
-                        <h4 class="font-bold text-slate-800 flex items-center gap-2">
-                            <span class="bg-cyan-100 text-cyan-700 text-xs font-bold px-2 py-1 rounded-full">PREDETERMINADAS</span>
-                            Formas de fábrica
-                        </h4>
-                        <ul class="space-y-2 text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Cuadrado / Rectángulo</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Triángulo / Trapezoide</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Rombo / Romboide</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Polígono (L, U, Z, S)</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Espiral plana (paso fijo)</li>
-                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>Gancho / Grapa simple</li>
-                        </ul>
-                    </div>
-
-                    <div class="space-y-3">
-                        <h4 class="font-bold text-slate-800 flex items-center gap-2">
-                            <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded-full">PROGRAMABLES</span>
-                            Cómo crear una forma nueva
-                        </h4>
-                        <ol class="space-y-2 text-sm text-slate-600 list-none">
-                            <li class="flex items-start gap-2"><span class="font-bold text-emerald-600 w-4 shrink-0">1.</span>Seleccionar "Nueva forma" en el panel táctil CNC.</li>
-                            <li class="flex items-start gap-2"><span class="font-bold text-emerald-600 w-4 shrink-0">2.</span>Ingresar los ángulos de cada doblez (en grados) y la longitud de cada segmento.</li>
-                            <li class="flex items-start gap-2"><span class="font-bold text-emerald-600 w-4 shrink-0">3.</span>Definir cantidad de piezas a producir en serie.</li>
-                            <li class="flex items-start gap-2"><span class="font-bold text-emerald-600 w-4 shrink-0">4.</span>Guardar con nombre y ejecutar. La forma queda en memoria para usos futuros.</li>
-                        </ol>
-                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-2">
-                            <p class="text-xs text-amber-800"><i class="fa-solid fa-triangle-exclamation mr-1"></i><strong>Verificar con el fabricante</strong> el límite de ángulo máximo por doblez (típicamente 0° – 180°) y el radio mínimo según el diámetro del alambre.</p>
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Cuántas formas o figuras distintas puede producir la máquina en total?</p>
+                            <p class="text-xs text-slate-500 mt-1">Solicitar el número exacto o el catálogo completo de formas disponibles.</p>
                         </div>
                     </div>
 
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Las formas vienen predeterminadas de fábrica o el operario puede programar formas nuevas?</p>
+                            <p class="text-xs text-slate-500 mt-1">Determinar si el sistema es cerrado (solo formas fijas) o abierto (permite programación personalizada desde el panel).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">Si se pueden crear formas personalizadas, ¿cómo se programa una forma nueva desde el panel CNC?</p>
+                            <p class="text-xs text-slate-500 mt-1">Pedir una demostración o video del proceso de programación paso a paso.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Puede la máquina producir todas las formas que aparecen en la imagen de referencia?</p>
+                            <p class="text-xs text-slate-500 mt-1">Mostrar la imagen al proveedor y pedir confirmación forma por forma. Si alguna no es posible, que lo indique por escrito.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Qué formas o configuraciones NO puede realizar esta máquina?</p>
+                            <p class="text-xs text-slate-500 mt-1">Exigir una lista clara de las limitaciones. Desconfiar de proveedores que afirmen que "puede hacer todo".</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">6</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Cuál es el ángulo mínimo y máximo de doblez que admite la máquina?</p>
+                            <p class="text-xs text-slate-500 mt-1">Verificar el rango de ángulos por doblez y si aplica igual para todos los diámetros de alambre.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4 hover:border-cyan-300 hover:bg-cyan-50/30 transition-colors duration-200">
+                        <div class="shrink-0 w-8 h-8 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">7</div>
+                        <div>
+                            <p class="font-semibold text-slate-800">¿Cuántas formas pueden almacenarse en la memoria del controlador CNC?</p>
+                            <p class="text-xs text-slate-500 mt-1">Conocer la capacidad de almacenamiento del sistema para planificar la operación con múltiples referencias.</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- No realizables -->
-                <div class="bg-red-50 border border-red-200 rounded-xl p-5">
-                    <h4 class="font-bold text-red-700 mb-3"><i class="fa-solid fa-circle-xmark mr-2"></i>Formas que NO puede realizar</h4>
-                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-700">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i>Espirales o hélices tridimensionales (3D)</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i>Curvas continuas sin segmentos rectos intermedios</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i>Dobleces con radio inferior al mínimo del material</li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i>Formas que requieran doblez en más de un plano simultáneo</li>
-                    </ul>
+                <!-- Nota de alerta -->
+                <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 flex items-start gap-3">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-500 text-lg shrink-0 mt-0.5"></i>
+                    <p class="text-sm text-amber-900"><strong>Importante:</strong> Solicitar al proveedor un video de la máquina produciendo al menos 3 formas distintas con acero corrugado antes de cerrar cualquier negociación.</p>
                 </div>
 
             </div>
